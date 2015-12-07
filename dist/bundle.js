@@ -513,13 +513,14 @@ function Gauge(placeholderName, configuration)
   }
 
   function getOptions(rainValue10min, rainValue24hr) {
-    var canvasHeight = rainValue24hr*1.25;
+    var canvasHeight = rainValue24hr*20;
     var density = 0.01;
     var rippleSpeed = 0.01;
     var frequency;
     var color = 'rgb(23, 139, 202)';
     var waveHeight = 40;
     var waveLength = 400;
+    rainValue10min = 8;
 
     if (rainValue10min < 1) {
       frequency = 5 * rainValue10min;

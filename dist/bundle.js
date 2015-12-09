@@ -18,7 +18,7 @@
                      '</div>');
 
     if (parseInt(data.PM2_5) <= 11) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('低');
+      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('優良');
       $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-1.png');
     }
     else if (parseInt(data.PM2_5) <= 23) {

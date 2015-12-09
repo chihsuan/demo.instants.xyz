@@ -10,65 +10,71 @@
 
   d3.json('./air.json', function(data) { 
     data = data[0];
+     window.air = air;
+  air(data);
+  function air(data) {
+
+    var siteName = data.SiteName;
     $('#pm2_5').append('<div id="' + data.site_id + '">' +
-                      '<span class="site_name"><h4>' + data.SiteName + '</h4></span>' +
+                      '<div class="site_name"><h4>' + data.SiteName + '</h4></div>' +
                       '<div class="status"></div>' +
-                      '<img class="status_img" src="../PM2.5/images/pm2.5-wait.png">' + 
-                      '<span class="pm25"><h5>PM2.5：</h5></span>' +
+                      //'<img class="status_img" src="../PM2.5/images/pm2.5-wait.png">' + 
+                      '<span class="pm25"><h4>PM2.5：</h4></span>' +
                      '</div>');
+    var img = './images/pm2.5-wait.png';
 
     if (parseInt(data.PM2_5) <= 11) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('優良');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-1.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('良好');
+      img = './images/PM2.5-1.png';
     }
     else if (parseInt(data.PM2_5) <= 23) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('低');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-2.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('正常');
+      img = './images/PM2.5-2.png';
     }
     else if (parseInt(data.PM2_5) <= 35) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('低');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-3.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui green tag label status').text('正常');
+      img = './images/PM2.5-3.png';
     }
     else if (parseInt(data.PM2_5) <= 41) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui yellow tag label status').text('中');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-4.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui yellow tag label status').text('普通');
+      img = './images/PM2.5-4.png';
     }
     else if (parseInt(data.PM2_5) <= 47) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui orange tag label status').text('中');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-5.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui orange tag label status').text('稍差');
+      img = './images/PM2.5-5.png';
     }
     else if (parseInt(data.PM2_5) <= 53) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui orange tag label status').text('中');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-6.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui orange tag label status').text('稍差');
+      img = './images/PM2.5-6.png';
     }
     else if (parseInt(data.PM2_5) <= 58) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui red tag label status').text('高');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-7.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui red tag label status').text('不良');
+      img = './images/PM2.5-7.png';
     }
     else if (parseInt(data.PM2_5) <= 64) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui red tag label status').text('高');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-8.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui red tag label status').text('非常不良');
+      img = './images/PM2.5-8.png';
     }
     else if (parseInt(data.PM2_5) <= 70) {
-      $('#' + data.site_id + ' .status').attr('class', 'ui black tag label status').text('高');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-9.png');
+      $('#' + data.site_id + ' .status').attr('class', 'ui black tag label status').text('有害');
+      img = './images/PM2.5-9.png';
     }
     else if (parseInt(data.PM2_5) >= 71) {
       $('#' + data.site_id + ' .status').attr('class', 'ui purple tag label status').text('非常高');
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-10.png');
-    }
-    else if (isNaN(parseInt(data.PM2_5))) {
-      $('#' + data.site_id + ' .status_img').attr('src', 'images/PM2.5-wait.png');
+      img = './images/PM2.5-10.png';
     }
 
-    if (isNaN(parseInt(data.PM2_5))) {
-      $('#' + data.site_id + ' .pm25').children('h5')
-      .text("PM2.5：待更新");
+    //$('#' + data.site_id + ' .status_img').attr('src', img);
+
+    if (isNaN(parseInt(data.PM2_5)) || parseInt(data.PM2_5) === -1) {
+      $('#' + data.site_id + ' .pm25').children('h4')
+      .text(" PM2.5：待更新");
     }
     else {
-      $('#' + data.site_id + ' .pm25').children('h5')
-      .text("PM2.5： " + data.PM2_5 + " μg/m").append('<sup>3</sup>');
+      $('#' + data.site_id + ' .pm25').children('h4')
+      .text(" PM2.5： " + data.PM2_5 + " μg/m").append('<sup>3</sup>');
     }
+  }
   });
 })();
 
@@ -390,41 +396,45 @@ function Gauge(placeholderName, configuration)
 
 
   
+  
+
+
+  
   function visualBattery (id, percentage, color) {
-    
+
     // container
     d3.select(id)
         .append("rect")
-        .attr("width", 110)
-        .attr("height", 60)
-        .attr("stroke", "rgb(198, 202, 203)")
-        .attr("stroke-width", "5px")
+        .attr("width", 150)
+        .attr("height", 80)
+        .attr("stroke", "rgb(255, 255, 255)")
+        .attr("stroke-width", "2px")
         .attr("x", 5)
         .attr("y", 5)
-        .attr("rx", 5)
-        .attr("ry", 5)
+        .attr("rx", 10)
+        .attr("ry", 10)
         .style("fill", "transparent");
 
      // content
      d3.select(id)
         .append("rect")
-        .attr("width", 100*percentage)
-        .attr("height", 45)
-        .attr("x", 10)
+        .attr("width", 130*percentage)
+        .attr("height", 65)
+        .attr("x", 15)
         .attr("y", 12)
-        .attr("rx", 3)
-        .attr("ry", 2)
+        .attr("rx", 5)
+        .attr("ry", 5)
         .style("fill", color);
   
      d3.select(id)
         .append("rect")
-        .attr("width", 8)
-        .attr("height", 20)
-        .attr("x", 117)
-        .attr("y", 20)
+        .attr("width", 12)
+        .attr("height", 23)
+        .attr("x", 160)
+        .attr("y", 30)
         .attr("rx", 2)
         .attr("ry", 1)
-        .style("fill", 'rgb(198, 202, 203)');
+        .style("fill", 'rgb(255, 255, 255)');
  
 
      d3.select(id)
@@ -432,7 +442,7 @@ function Gauge(placeholderName, configuration)
         .attr("width", 8)
         .attr("height", 20)
         .attr("x", 50)
-        .attr("y", 40)
+        .attr("y", 55)
         .attr("rx", 2)
         .attr("ry", 1)
         .text(Math.round(percentage*100) + '%')

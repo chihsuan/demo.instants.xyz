@@ -22,62 +22,64 @@
           <h5 id="now" class="now"></h5>
         </div>
 
+
         <div class="col-md-4 top">
-          <h3 class="col-title ui blue massive label top left attached">
-            <a href="http://water.taiwanstat.com/">即時水情</a>
-          </h3>
-          <div id="water" class="content">
+          <div id="weather" class="content">
+            <h4 class="col-title ui blue massive">
+              <a href="http://www.cwb.gov.tw/V7/observe/">即時氣溫</a>
+            </h4>
+            <div class="img__wrapper">
+                  <img class="image" src="./images/normal.png" alt="衣服" />
+            <h4>臺南 19.4<sup>˚C</sup></h4>
+            </div>
           </div>
         </div>
-
-        <div class="col-md-4 top center">
-          <h4 class="col-title ui massive" style="margin-bottom:20px;">
+      
+        <div class="col-md-4 top center" id="air__wrapper">
+          <h4 class="col-title ui massive">
             <a href="http://real.taiwanstat.com/pm2.5/">即時空氣品質</a>
           </h4>
           <div id="pm2_5" class="content">
           </div> 
         </div>
-  
-        <div class="col-md-4 top">
-          <div id="rain" class="content">
-            <h3 class="col-title ui blue massive label top right attached">
-              <a href="http://real.taiwanstat.com/rain/">即時雨量</a>
-            </h3>
-          </div>
-        </div>
 
-     
-        <div class="col-md-4 bottom">
-          <div id="power" class="content">
-            <h3 class="col-title ui blue massive label top left attached">
-              <a href="http://real.taiwanstat.com/power/">即時用電</a>
-            </h3>
-          </div>
-        </div>
-
-       <div class="col-md-4 bottom center">
+         <div class="col-md-4 top center">
           <div id="uv" class="content">
             <h4 class="col-title ui huge">
               <a href="http://real.taiwanstat.com/uv/">即時紫外線指數</a>
             </h4>
             <img class="image" src="./images/uv.png" alt="UV太陽雨傘" />
-            <h4>9-中量級</h4>
+            <h4>中量級（9）</h4>
+          </div>
+        </div>
+ 
+        <div class="col-md-4 bottom">
+          <div id="power" class="content">
+            <h4 class="col-title ui massive">
+              <a href="http://real.taiwanstat.com/power/">即時用電</a>
+            </h4>
           </div>
         </div>
 
+        <div class="col-md-4 bottom center">
+          <h4 class="col-title ui massive">
+            <a class="water-title" href="http://water.taiwanstat.com/">即時水情</a>
+          </h4>
+          <div id="water" class="content">
+          </div>
+        </div>
+        
         <div class="col-md-4 bottom">
-          <div id="weather" class="content">
-            <h3 class="col-title ui blue massive label top right attached">
-              <a href="http://www.cwb.gov.tw/V7/index.htm">即時氣溫</a>
-            </h3>
-            <img class="image" src="./images/normal.png" alt="衣服" />
-            <h4>臺南 19.4<sup>˚C</sup></h4>
+          <div id="rain" class="content">
+            <h4 class="col-title ui massive">
+              <a href="http://real.taiwanstat.com/rain/">即時雨量</a>
+            </h4>
           </div>
         </div>
 
         <!--end-->
       </div>
-      <div class="footer" style="text-align: center; font-size: 1.6rem; position:relative; left: -20px; top:-30px;">
+      <div class="footer" style="text-align: center; font-size: 1.6rem; position:absolute; left: 42%; top:45%;">
         <a class="btn btn-danger" style="margin-left: -5px; position:relative; padding: 10px;" href="https://chrome.google.com/webstore/detail/fghfkeajhcmoohfcfmdkajambdcanmob">安裝 Instants</a>
         <a class="btn btn-primary" style="padding: 10px;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//demo.instants.xyz">分享到 Facebook</a>
       </div>
@@ -106,7 +108,7 @@
       }  // add zero in front of numbers < 10
       return i;
     }
-    startTime();
+    //startTime();
   </script>
   
 

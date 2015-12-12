@@ -614,10 +614,12 @@ function Gauge(placeholderName, configuration)
        setColor(configs[reservoirName], percentage);
       
        // create svg
-       $('#water').append('<div class="reservoir">' + '<h4>' + reservoirName + '</h4>' +
+       $('#water').append('<div class="reservoir">'  +
                           '<svg id="' + id + '">' + '</svg>' +
                           '<span class="volumn"><h5></h5></span>' +
                           '<span class="state"><h5></h5></span></div>');
+
+
        // draw
        loadLiquidFillGauge(id, percentage, configs[reservoirName]);
 

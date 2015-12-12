@@ -441,12 +441,13 @@ function Gauge(placeholderName, configuration)
         .append("svg:text")
         .attr("width", 8)
         .attr("height", 20)
-        .attr("x", 50)
+        .attr("x", 75)
         .attr("y", 55)
         .attr("rx", 2)
         .attr("ry", 1)
         .text(Math.round(percentage*100) + '%')
-        .style("fill", 'rgb(255, 255, 255)');
+        .style("fill", 'rgb(255, 255, 255)')
+        .style("font-size", '16px');
 
   }
 

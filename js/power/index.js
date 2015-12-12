@@ -94,7 +94,7 @@
         .append("svg:text")
         .attr("width", 8)
         .attr("height", 20)
-        .attr("x", 50)
+        .attr("x", 75)
         .attr("y", 40)
         .attr("rx", 2)
         .attr("ry", 1)

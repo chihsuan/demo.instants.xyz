@@ -28,7 +28,7 @@
               <a href="http://www.cwb.gov.tw/V7/observe/">即時氣溫</a>
             </h4>
             <div class="img__wrapper">
-                  <img class="image" src="./images/normal.png" alt="衣服" />
+                  <img class="image" id="state" src="./images/normal.png" alt="天氣圖示" />
                   <h4><span id="mon">午安，</span>臺南 19.4<sup>˚C</sup></h4>
                   <h5>12小時預報： 氣溫 18~22°˚C 降雨機率 0%</h5>
             </div>
@@ -130,6 +130,7 @@
   var hours = new Date().getHours();
   window.now = now;
   var greeting;
+  var state = './images/normal.png';
 
   if (window.now > 5 && window.now < 12) {
     greeting = '早安，';
@@ -139,8 +140,10 @@
   } 
   else {
     greeting = '晚安，';
+    state = './images/moon_cloud.png';
   }
   $('#mon').text(greeting);
+  $('#state').attr('src', state);
 </script> 
 
 </body>

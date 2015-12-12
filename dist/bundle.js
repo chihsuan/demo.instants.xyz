@@ -469,11 +469,12 @@ function Gauge(placeholderName, configuration)
 
     data.forEach(function(site) {
       var name = site.SiteName.replace(/[()]/g, '-');
+      
       $('#rain').append('<div class="raindrop" id="A'+ site.SiteId + '">' +
-        '<h3 class="sitename">' + name + '（' + site.Township + '）</h3>' +
-        '<h5>10分鐘累積雨量<br/>' + colorlize(site.Rainfall10min) + '</h5>' +
-        '<h5>1小時累積雨量<br/>' + colorlize(site.Rainfall1hr) + '</h5>' +
-        '<h5>日累積雨量<br/>' + colorlize(site.Rainfall24hr) + '</h5></div>'
+        '<h3 class="sitename">' + site.Township + '測站</h3>' +
+        '<h5>日累積雨量<br/>' + colorlize(site.Rainfall24hr) + ' 毫米</h5></div>' +
+        '<h5>1小時累積雨量：' + colorlize(site.Rainfall1hr) + ' 毫米</h5>' + 
+        '<h5>10分鐘累積雨量：' + colorlize(site.Rainfall10min) + ' 毫米</h5>' 
       );
       if (Math.round(10*site.Rainfall24hr) !== 0) {
         createRainDrop('#A'+site.SiteId, getOptions(site.Rainfall10min, site.Rainfall24hr));

@@ -29,7 +29,7 @@
             </h4>
             <div class="img__wrapper">
                   <img class="image" src="./images/normal.png" alt="衣服" />
-                  <h4>午安，臺南 19.4<sup>˚C</sup></h4>
+                  <h4><span id="mon">午安，</span>臺南 19.4<sup>˚C</sup></h4>
                   <h5>12小時預報： 氣溫 18~22°˚C 降雨機率 0%</h5>
             </div>
           </div>
@@ -126,6 +126,21 @@
   ga('create', 'UA-71076686-1', 'auto');
   ga('send', 'pageview');
   ga('send', 'event', 'demopage');
+
+  var hours = new Date().getHours();
+  window.now = now;
+  var greeting;
+
+  if (window.now > 5 && window.now < 12) {
+    greeting = '早安，';
+  } 
+  else if (window.now >= 12 && window.now < 18) {
+    greeting = '午安，';
+  } 
+  else {
+    greeting = '晚安，';
+  }
+  $('#mon').text(greeting);
 </script> 
 
 </body>

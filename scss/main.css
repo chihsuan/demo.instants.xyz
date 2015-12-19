@@ -74,8 +74,23 @@ a.preview:hover {
   opacity: 0.8;
 }
 
-
 .col-sm-4 i {
   font-size: 36px;
   color: #00BCD4;
+}
+
+@media all and (max-width: 650px) {
+  header h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  section {
+    height: inherit;
+  }
+  .background2 h1{
+    font-size: 20px;
+  }
+  .background2 .container {
+    height: inherit;
+  }
 }

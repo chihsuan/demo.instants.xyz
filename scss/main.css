@@ -81,16 +81,25 @@ a.preview:hover {
 
 @media all and (max-width: 650px) {
   header h1 {
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 30px;
-  }
-  section {
-    height: inherit;
-  }
-  .background2 h1{
-    font-size: 20px;
-  }
-  .background2 .container {
-    height: inherit;
-  }
+}
+section {
+  height: inherit;
+}
+.background2 h1{
+  font-size: 20px;
+}
+.background2 {
+  overflow: hidden;
+}
+.background2 .container {
+  height: inherit;
+}
+.background2 .section-title {
+  width: inherit;
+}
+.section-title {
+  margin: 50px;
+}
 }

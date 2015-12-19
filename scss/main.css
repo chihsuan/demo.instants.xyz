@@ -24,7 +24,7 @@ header h1 {
   font-size: 54px;
   font-weight: 700;
 }
-header a.btn.btn-danger {
+header a.btn.btn-danger, a.btn {
   font-weight: bold;
 }
 .site-heading {

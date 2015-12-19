@@ -11,119 +11,83 @@
     <title>Instants - chrome extension</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./images/favicon.ico">
+     <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./bower_components/semantic-ui-label/label.min.css" type="text/css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./dist/index.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./scss/main.css" type="text/css" media="screen" charset="utf-8">
 </head>
 <body>
-    <div class="container-fluid">
-      <div class="row">
-      <div class="now_wrapper">
-          <h5 id="now" class="now"></h5>
+  <a href="http://demo.instants.xyz/" target="_blank" class="logo" style="text-align: center; font-size: 1.6rem; position:absolute; left: 10px; top: 10px; color:#fff; z-index:9999; font-weight: bold;">
+    <img src="./images/icon48.png" width="28px"/> Instants
+  </a>
+  <a style="position: absolute; top: 15px; right: 50px; font-size: 1.7rem; z-index: 999; color: #fff;" href="mailto:contact@instants.xyz">f</a>
+  <a style="position: absolute; top: 15px; right: 10px; font-size: 1.8rem; z-index: 999; color: #fff;" href="mailto:contact@instants.xyz"><i class="glyphicon glyphicon-envelope" title="聯絡我們 "></i></a>
+  <header class="header gingham">
+  <div class="container"> 
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>提供您最關心的生活資訊</h1>
+          <h4>超過7000人使用 Instants 作為 Chrome 預設分頁</h4>
+          <a class="btn btn-primary" style="margin-left: -5px; position:relative; padding: 10px; margin-top: 10px;" href="https://chrome.google.com/webstore/detail/instants/fghfkeajhcmoohfcfmdkajambdcanmob">安裝 Instants 於 Chrome</a>
         </div>
-
-        <div class="col-md-4 top">
-          <div id="weather" class="content">
-            <h4 class="col-title ui blue massive">
-              <a href="http://www.cwb.gov.tw/V7/observe/">即時氣溫</a>
-            </h4>
-            <div class="img__wrapper">
-                  <img class="image" id="state" src="./images/normal.png" alt="天氣圖示" />
-                  <h4><span id="mon">午安，</span>臺南 19.4<sup>˚C</sup></h4>
-                  <h5>12小時預報： 氣溫 18~22°˚C 降雨機率 0%</h5>
-            </div>
-          </div>
-        </div>
-      
-        <div class="col-md-4 top center" id="air__wrapper">
-          <h4 class="col-title ui massive">
-            <a href="http://real.taiwanstat.com/pm2.5/">即時空氣品質</a>
-          </h4>
-          <div id="pm2_5" class="content">
-          </div> 
-        </div>
-
-         <div class="col-md-4 top center">
-          <div id="uv" class="content">
-            <h4 class="col-title ui huge">
-              <a href="http://real.taiwanstat.com/uv/">即時紫外線指數</a>
-            </h4>
-            <img class="image" src="./images/uv.png" alt="UV太陽雨傘" />
-            <h4>低量級（1）</h4>
-            <h5>對於一般人無危害</h5>
-          </div>
-        </div>
- 
-        <div class="col-md-4 bottom">
-          <div id="power" class="content">
-            <h4 class="col-title ui massive">
-              <a href="http://real.taiwanstat.com/power/">即時用電</a>
-            </h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 bottom center">
-          <h4 class="col-title ui massive">
-            <a class="water-title" href="http://water.taiwanstat.com/">即時水情-南化水庫</a>
-          </h4>
-          <div id="water" class="content">
-          </div>
-        </div>
-        
-        <div class="col-md-4 bottom">
-          <div id="rain" class="content">
-            <h4 class="col-title ui massive">
-              <a href="http://real.taiwanstat.com/rain/">即時雨量</a>
-            </h4>
-          </div>
-        </div>
-
-        <!--end-->
-      </div>
-
-      <div class="menu" style="text-align: center; position:absolute; top: 15px; right: 15px; font-size: 2.4rem; color:#fff;">
-        <a href="mailto:contact@instants.xyz"><i class="glyphicon glyphicon-envelope" title="聯絡我們 "></i></a>
-      </div>
-
-
-      <div class="menu" style="position:absolute; top: 55px; right: 17px; color:#fff; height: 25px; width:25px;">
-        <a class="btn btn-primary" href="https://www.facebook.com/instantsxyz/">f</a>
-      </div>
-
-      <a href="http://demo.instants.xyz/" target="_blank" class="logo" style="text-align: center; font-size: 1.6rem; position:absolute; left: 10px; top: 10px; color:#fff; z-index:9999">
-        <img src="./images/icon48.png" width="28px"/> Instants
-      </a>
-
-      <div class="footer" style="text-align: center; font-size: 1.6rem; position:absolute; width: 100%; text-align: center; top:45%;">
-        <a class="btn btn-danger" style="margin-left: -5px; position:relative; padding: 10px;" href="https://chrome.google.com/webstore/detail/instants/fghfkeajhcmoohfcfmdkajambdcanmob">安裝 Instants</a>
-        <a class="btn btn-primary" style="padding: 10px;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//demo.instants.xyz">分享到 Facebook</a>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.9/d3.min.js"></script>
-    <script src="./bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script src="./dist/bundle.js"></script>
-    <script>
-      function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        h = checkTime(h);
-        document.getElementById('now').innerHTML =
-         h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
+   </div>
+   </header>
 
-    function checkTime(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }  // add zero in front of numbers < 10
-      return i;
-    }
-    //startTime();
+   <section>
+    <div class="container">
+      <h2 class="section-title">打開新分頁，賞心悅目，一目了然</h2>
+      <div class="row"> 
+      	<div class="col-sm-4">
+          <i class="glyphicon glyphicon-flash"></i>
+            <h3>即時生活、藝文資訊</h3>
+            <p>提供您最即時的生活資訊，包含氣溫、雨量、空氣品質、紫外線等氣象資訊，以及每週電影、藝文活動情報。</p>
+      	</div> 
+         <div class="col-sm-4"> 
+           <i class="glyphicon glyphicon-home"></i>
+           <h3>關注在地</h3>
+           <p>根據您的位置變化，將可以自動偵測，調整提供給您附近的資訊。</p>
+      	 </div> 
+      	 <div class="col-sm-4"> 
+           <i class="glyphicon glyphicon-picture"></i>
+           <h3>漂亮風景</h3>
+           <p>每日變化的漂亮風景底圖，沒有惱人的跳出式廣告。</p>
+        </div> 
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="background2 gingham">
+  <div class="container">
+      <h1 class="section-title">像家一樣的感覺</h1>
+      <div class="row">
+        <h2 class="preview-head"><a class="preview" href="./preview.html">快速預覽</a></h2>
+      </div>
+    </div>
+  </section>
+
+  <section>
+   <div class="container">
+          <a class="btn btn-danger" style="margin-left: -5px; position:relative; padding: 10px; margin-top: 50px; font-weight: bold;" href="https://chrome.google.com/webstore/detail/instants/fghfkeajhcmoohfcfmdkajambdcanmob">安裝 Instants</a>
+        <a class="btn btn-primary" style="margin-top: 50px; padding: 10px;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//demo.instants.xyz">分享到 Facebook</a>
+      <h2 class="section-title">媒體、部落客報導</h2>
+      <div class="row"> 
+        <h4><a href="http://www.businessweekly.com.tw/KBlogArticle.aspx?id=14994"><img src="http://ibw.bwnet.com.tw/bw/images/LOGOslogan.png?20151221"></a>・
+        <a href="http://www.playpcesor.com/2015/12/instants-chrome-app.html">電腦玩物</a>・
+        <a href="http://www.soft4fun.net/software/internet/chrome-browsing/instants-for-chrome.htm#axzz3ulKfUzkf"><img src="http://www.soft4fun.net/images/logo_n.png"></a>・
+        <a href="http://www.cool3c.com/article/99843">癮科技</a>
+      </h4>
+      <div>
+   </div>
+ </section> 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
   </script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -134,24 +98,6 @@
   ga('create', 'UA-71076686-1', 'auto');
   ga('send', 'pageview');
   ga('send', 'event', 'demopage');
-
-  var hours = new Date().getHours();
-  window.now = now;
-  var greeting;
-  var state = './images/normal.png';
-
-  if (window.now > 5 && window.now < 12) {
-    greeting = '早安，';
-  } 
-  else if (window.now >= 12 && window.now < 18) {
-    greeting = '午安，';
-  } 
-  else {
-    greeting = '晚安，';
-    state = './images/moon_cloud.png';
-  }
-  $('#mon').text(greeting);
-  $('#state').attr('src', state);
 </script> 
 
 </body>

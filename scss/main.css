@@ -101,7 +101,7 @@ section {
   height: inherit;
 }
 .background2 h1{
-  font-size: 20px;
+  font-size: 20px !important;
 }
 .background2 {
   overflow: hidden;

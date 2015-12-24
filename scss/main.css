@@ -82,9 +82,9 @@ a.preview:hover {
 }
 .background {
   background-size: cover;
-  height: 680px;
+  height: 700px;
   width: 100vw;
-  background: #12111B;
+  background: rgb(29, 29, 29);
   overflow: hidden;
 }
 .background img {
@@ -92,9 +92,9 @@ a.preview:hover {
   max-width: 900px;
   max-height: 500px;
 }
-.background h2 {
+.background h1 {
   color: #fff;
-  margin: 30px;
+  margin: 40px;
 }
 .background .container {
   width: 100vw;

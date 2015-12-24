@@ -48,7 +48,7 @@ section {
 .background2 .section-title {
   padding: 30px;
   width: 600px;
-  margin: auto;
+  margin: 20px auto;
   font-size: 48px;
 }
 .background2 .container {
@@ -63,12 +63,13 @@ section .container {
   text-align: center;
 }
 .preview-head {
-  padding: 0px 0;
+  padding: 10px 0;
 }
 a.preview {
   color: #fff;
-  padding: 10px;
-  border: 1.5px solid #fff;
+  top: -30px;
+  position: relative;
+  font-weight: bold;
 }
 a.preview:hover {
   opacity: 0.6;
@@ -80,11 +81,17 @@ a.preview:hover {
   color: #00BCD4;
 }
 .background {
-  background: url('/images/sample.jpg');
   background-size: cover;
   height: 680px;
   width: 100vw;
-  background-repeat: no-repeat;
+  background: #12111B;
+}
+.background img {
+   height: 500px;
+}
+.background h2 {
+  color: #fff;
+  margin: 30px;
 }
 .background .container {
   width: 100vw;

@@ -82,7 +82,7 @@ a.preview:hover {
 }
 .background {
   background-size: cover;
-  height: 700px;
+  height: 750px;
   width: 100vw;
   background: rgb(29, 29, 29);
   overflow: hidden;
@@ -94,7 +94,7 @@ a.preview:hover {
 }
 .background h1 {
   color: #fff;
-  margin: 40px;
+  margin: 50px;
 }
 .background .container {
   width: 100vw;
